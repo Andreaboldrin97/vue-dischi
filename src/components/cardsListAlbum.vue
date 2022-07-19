@@ -1,7 +1,12 @@
 <template>
     <div class="container">
         <div class="row row-cols-5">
-            <cardAlbum v-for="(album , index) in Album" :key="index"/>
+            <cardAlbum v-for="(album , index) in Album" :key="index"
+                  :author ="album.author"
+                  :genre ="album.genre"
+                  :poster ="album.poster"
+                  :title ="album.title"
+                  :year ="album.year"/>
         </div>
     </div>
 </template>

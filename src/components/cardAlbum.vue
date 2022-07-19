@@ -1,13 +1,20 @@
 <template>
     <div class="music-card">
-          <img src="https://media-cdn.tripadvisor.com/media/photo-s/0c/bb/a3/97/predator-ride-in-the.jpg" alt="">
-          <h3 class="text-center text-white-50">title</h3>
-          <h6 class="text-center text-white-50">artista <br> anno </h6> 
+          <img :src="poster" :alt="title">
+          <h3 class="text-center text-white-50">{{ title }}</h3>
+          <h6 class="text-center text-white-50"> {{ author }} <br> {{ year }} </h6> 
     </div>
 </template>
 
 <script>
 export default {
+    props : {
+        author : String,
+        genre : String,
+        poster : String,
+        title : String,
+        year : [Number , String]
+    }
 
 }
 </script>

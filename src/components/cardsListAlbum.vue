@@ -9,7 +9,7 @@
                   :year ="album.year"/>
         </div>
         <div v-else class="d-flex justify-content-center">
-          <div class="loading-bar">
+          <div class="loading-bar rounded">
             <div class="loading">
 
             </div>

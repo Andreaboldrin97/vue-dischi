@@ -1,8 +1,8 @@
 <template>
-    <div class="music-card">
+    <div class="music-card m-3">
           <img :src="poster" :alt="title">
-          <h3 class="text-center text-white-50">{{ title }}</h3>
-          <h6 class="text-center text-white-50"> {{ author }} <br> {{ year }} </h6> 
+          <h6 class="text-center text-white pt-3">{{ title }}</h6>
+          <div class="info-album text-center text-white-50"> {{ author }} <br> {{ year }} </div> 
     </div>
 </template>
 
@@ -22,10 +22,15 @@ export default {
 <style lang="scss" scoped>
 @import "../styles/variables.scss";
 .music-card{
-     background-color: $colorHeader;
-    border: 1px solid red;
+    background-color: $colorHeader;
         img{
         width: 100%;
+        }
+        h6{
+            text-transform: uppercase;
+        }
+        .info-album{
+            font-size: 13px;
         }
     }
 </style>

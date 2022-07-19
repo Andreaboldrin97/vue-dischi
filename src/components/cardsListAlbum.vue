@@ -56,8 +56,9 @@ export default {
     height: 6px;
     width: 150px;
     animation-name: slidein;
-    animation-duration: 4s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
+    animation-direction: alternate; 
   }
 }
 @keyframes slidein {

@@ -1,18 +1,14 @@
 <template>
   <main>
-    <div class="container">
-      <div class="row row-cols-5">
-      <cardAlbum/>
-      </div>
-    </div>
+    <cardListAlbum/>
   </main>
 </template>
 
 <script>
-import cardAlbum from '../components/cardAlbum.vue'
+import cardListAlbum from './cardsListAlbum.vue'
 export default {
   components: {
-    cardAlbum,
+    cardListAlbum,
   }
 }
 </script>

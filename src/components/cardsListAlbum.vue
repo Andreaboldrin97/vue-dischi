@@ -52,7 +52,7 @@ export default {
   width: 900px;
   border: 2px solid white;
   .loading{
-    background-color: $colorBreand ;
+    background-color: $colorBreand;
     height: 6px;
     width: 150px;
     animation-name: slidein;

@@ -1,7 +1,7 @@
 <template>
-  <div>
-      
-  </div>
+  <header>
+      <img class="m-1" src="../assets/logo-spotify.png" alt="spotify logo">
+  </header>
 </template>
 
 <script>
@@ -12,5 +12,12 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/variables.scss";
+header{
+  height: 50px;
+  background-color: $colorHeader;
+  img{
+    width: 40px; 
+  }
+}
 
 </style>

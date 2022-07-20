@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row px-5 py-3">
         <selectGenre @select="valueAlbum"/>
-        <selectArtist/>
+        <selectArtist @select="valueAuthorAlbum"/>
       </div>
         <div class="row row-cols-6" v-if="Album.length === 10">
             <cardAlbum v-for="(album , index) in genreAlbum" :key="index"
@@ -37,7 +37,8 @@ export default {
       data : function(){
         return{
             Album : [],
-            genreAlbum : []
+            genreAlbum : [],
+            authorAlbum : []
         }
       },
       methods:{
@@ -57,6 +58,16 @@ export default {
             console.log(this.genreAlbum)
           }else{
             this.genreAlbum = this.Album
+          }
+          
+        },
+          valueAuthorAlbum : function(needle){
+          console.log(needle)
+          if(needle !== ''){
+            this.authorAlbum = [...this.Album].filter((element) => element.genre.includes(needle));
+            console.log(this.authorAlbum)
+          }else{
+            this.authorAlbum = this.Album
           }
           
         }

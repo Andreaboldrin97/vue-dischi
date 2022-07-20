@@ -1,5 +1,9 @@
 <template>
     <div class="container">
+      <div class="row px-5 py-3">
+        <selectGenre/>
+        <selectArtist/>
+      </div>
         <div class="row row-cols-6" v-if="Album.length === 10">
             <cardAlbum v-for="(album , index) in Album" :key="index"
                   :author ="album.author"
@@ -21,9 +25,14 @@
 <script>
 import axios from "axios";
 import cardAlbum from './cardAlbum.vue'
+import selectGenre from './selectGenre.vue'
+import selectArtist from './selectArtist.vue'
+
 export default {
       components: {
         cardAlbum,
+        selectGenre,
+        selectArtist
       },
       data : function(){
         return{
@@ -33,9 +42,8 @@ export default {
       methods:{
         getAlbum : function(){
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-            .then((elemnt) =>{
-              this.Album = elemnt.data.response ;
-              console.log(this.Album)
+            .then((element) =>{
+              this.Album = element.data.response ;
             })
         }
       },

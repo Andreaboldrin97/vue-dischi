@@ -1,10 +1,10 @@
 <template>
-    <select class="col-4 rounded-3" v-model="selectedArtist" @select="$emit('select' , selectedArtist)">
+    <select class="col-4 rounded-3" v-model="selectedArtist" @change="$emit('select' , selectedArtist)">
           <option selected disabled value="">GENERE</option>
-          <option value="rock">Rock</option>
-          <option value="pop">Pop</option>
-          <option value="jazz">Jazz</option>
-          <option value="metal">Metal</option>
+          <option value="Rock">Rock</option>
+          <option value="Pop">Pop</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Metal">Metal</option>
     </select>
 </template>
 

@@ -49,9 +49,9 @@ export default {
             })
         },
         valueAlbum : function(needle){
-          console.log(needle.value)
-          this.genreAlbum = [...this.album].filter((author) => author.genre.includes(needle));
-          
+          console.log(needle)
+          this.genreAlbum = [...this.Album].filter((element) => element.genre.includes(needle));
+          console.log(this.genreAlbum)
         }
       },
       created(){

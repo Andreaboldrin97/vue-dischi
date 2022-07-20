@@ -1,6 +1,6 @@
 <template>
    <select class="col-4 offset-4 rounded-3">
-          <option selected>ARTISTA</option>
+          <option selected disabled value="">ARTISTA</option>
           <option value="bonjovi">Bon Jovi</option>
           <option value="queen">Queen</option>
           <option value="sting">Sting</option>

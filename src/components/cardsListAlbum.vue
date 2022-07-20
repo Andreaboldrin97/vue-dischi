@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="row px-5 py-3">
-        <selectGenre/>
+        <selectGenre @select="valueAlbum"/>
         <selectArtist/>
       </div>
         <div class="row row-cols-6" v-if="Album.length === 10">
@@ -36,7 +36,8 @@ export default {
       },
       data : function(){
         return{
-            Album : []
+            Album : [],
+            genreAlbum : []
         }
       },
       methods:{
@@ -44,7 +45,13 @@ export default {
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((element) =>{
               this.Album = element.data.response ;
+              console.log(this.Album)
             })
+        },
+        valueAlbum : function(needle){
+          console.log(needle.value)
+          this.genreAlbum = [...this.album].filter((author) => author.genre.includes(needle));
+          
         }
       },
       created(){

@@ -5,7 +5,7 @@
         <selectArtist/>
       </div>
         <div class="row row-cols-6" v-if="Album.length === 10">
-            <cardAlbum v-for="(album , index) in Album" :key="index"
+            <cardAlbum v-for="(album , index) in genreAlbum" :key="index"
                   :author ="album.author"
                   :genre ="album.genre"
                   :poster ="album.poster"
@@ -45,13 +45,20 @@ export default {
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((element) =>{
               this.Album = element.data.response ;
+              this.genreAlbum = element.data.response
+              
               console.log(this.Album)
             })
         },
         valueAlbum : function(needle){
           console.log(needle)
-          this.genreAlbum = [...this.Album].filter((element) => element.genre.includes(needle));
-          console.log(this.genreAlbum)
+          if(needle !== ''){
+            this.genreAlbum = [...this.Album].filter((element) => element.genre.includes(needle));
+            console.log(this.genreAlbum)
+          }else{
+            this.genreAlbum = this.Album
+          }
+          
         }
       },
       created(){

@@ -1,6 +1,6 @@
 <template>
     <select class="col-4 rounded-3" v-model="selectedArtist" @change="$emit('select' , selectedArtist)">
-          <option selected disabled value="">GENERE</option>
+          <option selected value="">GENERE</option>
           <option value="Rock">Rock</option>
           <option value="Pop">Pop</option>
           <option value="Jazz">Jazz</option>

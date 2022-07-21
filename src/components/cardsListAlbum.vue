@@ -4,7 +4,7 @@
         <selectGenre @select="valueAlbum"/>
         <selectArtist @select="valueAuthorAlbum"/>
       </div>
-        <div class="row row-cols-6" v-if="Album.length === 10">
+        <div class="row row-cols-6" v-if="isLoading == true">
             <cardAlbum v-for="(album , index) in authorAlbum" :key="index"
                   :author ="album.author"
                   :genre ="album.genre"
@@ -38,7 +38,8 @@ export default {
         return{
             Album : [],
             genreAlbum : [],
-            authorAlbum : []
+            authorAlbum : [],
+            isLoading : false
         }
       },
       methods:{
@@ -48,7 +49,7 @@ export default {
               this.Album = element.data.response ;
               this.genreAlbum = element.data.response;
               this.authorAlbum = element.data.response;
-
+              this.isLoading = true
               
               console.log(this.Album)
             })
